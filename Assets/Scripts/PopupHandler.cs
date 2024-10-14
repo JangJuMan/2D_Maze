@@ -30,7 +30,7 @@ public class PopupHandler : MonoBehaviour
 
         // DOTween 함수를 차례대로 수행하도록 함
         // var : 컴파일러가 자동으로 형식 결정
-        var seq = DOTween.Sequence();
+        var seq = DOTween.Sequence().SetUpdate(true);
 
         // DOScale 의 첫 번째 파라미터는 목표 scale 값, 두번째 시간
         // 최대로 커졌다가, 원래 팝업창 사이즈로 줄어드는 애니메이션 예약
@@ -47,7 +47,7 @@ public class PopupHandler : MonoBehaviour
     public void Hide(){
         Debug.Log("popupHandler Hide");
         // 시퀀스 생성
-        var seq = DOTween.Sequence();
+        var seq = DOTween.Sequence().SetUpdate(true);
 
         // 팝업창 최소화
         transform.localScale = Vector3.one * minScale;

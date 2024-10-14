@@ -1,11 +1,11 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MazeMove : MonoBehaviour
 {
-    private float mouse_speed = 1.0f;
-    private float keyboard_speed = 1.0f;
+    private float mouse_speed = 0.4f;
+    private float keyboard_speed = 0.4f;
 
     void Awake(){
         Debug.Log("Awake");
@@ -19,6 +19,7 @@ public class MazeMove : MonoBehaviour
     void Start()
     {
         Debug.Log("start");
+        Application.targetFrameRate = 60;
     }
 
     void FixedUpdate(){
