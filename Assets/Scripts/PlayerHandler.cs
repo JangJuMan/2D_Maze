@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PlayerHandler : MonoBehaviour
 {
-    public PopupHandler popupWindow;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +20,8 @@ public class PlayerHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Finish")){
-            Debug.Log("스테이지 클리어");
-            popupWindow.Show();         
-            Time.timeScale = 0.0f;
+            Debug.Log("Player Handler : 스테이지 클리어");
+            GameManager.Instance.GameOver();
         }
     }
 
