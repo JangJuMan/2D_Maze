@@ -6,13 +6,19 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public PopupHandler popupWindow;
+    public PopupHandler clearPopup;
+    public PopupHandler hintPopup;
 
     public Text timeText;
+    public Text hintCntTxt;
     public Image[] starImages;
     public float[] stageGrade;
+    public GameObject[] hintWay;
 
     float time = 0.0f;
+    int hintLevel = 0;
+    int userHintCnt = 0;
+    int defaultHintCnt = 3;
 
     private void Awake(){
         if(Instance == null){
@@ -31,10 +37,15 @@ public class GameManager : MonoBehaviour
         timeText.text = time.ToString("N2");
     }
 
+
+
+
+
+    // Game Over
     public void GameOver(){
         Time.timeScale = 0.0f;
         SetStars();
-        popupWindow.Show();
+        clearPopup.Show();
     }
 
     private void SetStars(){
@@ -61,6 +72,28 @@ public class GameManager : MonoBehaviour
             starImages[3].gameObject.SetActive(true);
             starImages[4].gameObject.SetActive(true);
             starImages[5].gameObject.SetActive(true);
+        }
+    }
+
+    // Hint
+    public void SetUserHintCnt(){
+        userHintCnt = PlayerPrefs.GetInt("userHintCnt", defaultHintCnt);
+        hintCntTxt.text = "(현재 보유 힌트 : " + userHintCnt +  "개)";
+    }
+
+    public void UseHint(){
+        if(userHintCnt > 0){
+            if(hintLevel < 3){
+                hintWay[hintLevel++].SetActive(true);
+                PlayerPrefs.SetInt("userHintCnt", --userHintCnt);
+                Debug.Log("힌트 사용 완료");
+            }
+            else{
+                Debug.Log("해당 스테이지에서 힌트를 모두 사용하셨습니다");
+            }
+        }
+        else{
+            Debug.Log("사용 가능한 힌트가 없습니다");
         }
     }
 }

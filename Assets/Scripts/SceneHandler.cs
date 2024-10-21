@@ -13,12 +13,20 @@ public class SceneHandler : MonoBehaviour
         SceneManager.LoadScene("CharacterScene");
     }
 
-    public void LoadSoloLevels(){
-        SceneManager.LoadScene("SoloLevel");
+    public void LoadStages_solo(){
+        SceneManager.LoadScene("Stages_solo");
     }
 
-    public void LoadGameStage(){
-        SceneManager.LoadScene("SoloInGame1");
+    public void LoadStage_multi(){
+        // TODO : Multi Play Stage 
+    }
+
+    public void LoadSettings(){
+        // TODO : Setting  page
+    }
+
+    public void LoadInGame_solo(){
+        SceneManager.LoadScene("InGame_solo");
     }
 
     public void ExitGame(){

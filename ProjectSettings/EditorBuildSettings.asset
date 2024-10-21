@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterScene.unity
     guid: 69654ecb361652e4ca37d7755e2b482f
   - enabled: 1
-    path: Assets/Scenes/SoloLevel.unity
+    path: Assets/Scenes/Stages_solo.unity
     guid: b94a7b8d356434646b23e2660edd048f
   - enabled: 1
-    path: Assets/Scenes/SoloInGame1.unity
+    path: Assets/Scenes/InGame_solo.unity
     guid: 4d23ce50641b30140b09ee0dd9275628
   m_configObjects: {}
