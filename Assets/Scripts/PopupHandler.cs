@@ -12,7 +12,6 @@ public class PopupHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("popupHandler Start");
         // 초기화
         DOTween.Init();
 
@@ -24,7 +23,6 @@ public class PopupHandler : MonoBehaviour
     }
 
     public void Show(){
-        Debug.Log("popupHandler Show()");
         // 팝업 활성화
         gameObject.SetActive(true);
 
@@ -45,7 +43,6 @@ public class PopupHandler : MonoBehaviour
     }
 
     public void Hide(){
-        Debug.Log("popupHandler Hide");
         // 시퀀스 생성
         var seq = DOTween.Sequence().SetUpdate(true);
 

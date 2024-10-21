@@ -20,7 +20,6 @@ public class PlayerHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Finish")){
-            Debug.Log("Player Handler : 스테이지 클리어");
             GameManager.Instance.GameOver();
         }
     }

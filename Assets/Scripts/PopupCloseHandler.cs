@@ -8,6 +8,5 @@ public class PopupCloseHandler : MonoBehaviour
 
     public void ClosePopup(){
         popupWindow.Hide();
-        Debug.Log("ClosePopup()");
     }
 }
