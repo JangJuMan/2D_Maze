@@ -19,7 +19,7 @@ public class MazeMove : MonoBehaviour
     void Start()
     {
         Debug.Log("start");
-        Application.targetFrameRate = 60;
+        // Application.targetFrameRate = 60;
     }
 
     void FixedUpdate(){
