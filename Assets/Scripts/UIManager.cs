@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GoogleMobileAds.Sample;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class UIManager : MonoBehaviour
     public PopupHandler quitPopup;
     public PopupHandler hintPopup;
     public PopupHandler adPopup;
+    public AdHandler adManager;
 
     public void UI_OpenQuitPopup(){
         quitPopup.Show();
@@ -36,6 +38,11 @@ public class UIManager : MonoBehaviour
     public void UI_CloseAdPopup(){
         adPopup.Hide();
         Time.timeScale = 1.0f;
+    }
+    public void UI_ViewAd(){
+        adManager.LoadAd();
+        adManager.ShowAd();
+        Debug.Log("힌트개수 : before : " + PlayerPrefs.GetInt("userHintCnt"));
     }
 
 }
