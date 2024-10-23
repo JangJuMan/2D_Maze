@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -76,24 +77,22 @@ public class GameManager : MonoBehaviour
     }
 
     // Hint
-    public void SetUserHintCnt(){
+    public string HintCheck(){
         userHintCnt = PlayerPrefs.GetInt("userHintCnt", defaultHintCnt);
         hintCntTxt.text = "(현재 보유 힌트 : " + userHintCnt +  "개)";
+
+        if(hintLevel < 3){
+            if(userHintCnt > 0){
+                return "CanUseHint";
+            }
+            return "NoHint";
+        }
+        return "AlreadyUsed";
     }
 
     public void UseHint(){
-        if(userHintCnt > 0){
-            if(hintLevel < 3){
-                hintWay[hintLevel++].SetActive(true);
-                PlayerPrefs.SetInt("userHintCnt", --userHintCnt);
-                Debug.Log("힌트 사용 완료");
-            }
-            else{
-                Debug.Log("해당 스테이지에서 힌트를 모두 사용하셨습니다");
-            }
-        }
-        else{
-            Debug.Log("사용 가능한 힌트가 없습니다");
-        }
+        hintWay[hintLevel++].SetActive(true);
+        PlayerPrefs.SetInt("userHintCnt", --userHintCnt);
+        Debug.Log("힌트 사용 완료");
     }
 }
