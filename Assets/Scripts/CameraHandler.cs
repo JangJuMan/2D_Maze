@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-    public float zoomSpeed = 0.5f;
+    public float zoomSpeed = 0.001f;
+    float maxCameraSize = 5.0f;
     private Camera cam;
 
     void Start(){
         cam = GetComponent<Camera>();
     }
 
-    void Update(){
+    void FixedUpdate(){
         if(Input.touchCount == 2){
             Touch touch1 = Input.GetTouch(0);
             Touch touch2 = Input.GetTouch(1);
@@ -26,7 +27,7 @@ public class CameraHandler : MonoBehaviour
             float deltaMagnitudeDiff = prevTouchDeltaMag - currTouchDeltaMag;
 
             cam.orthographicSize += deltaMagnitudeDiff * zoomSpeed;
-            cam.orthographicSize = Mathf.Max(cam.orthographicSize, 0.1f);
+            cam.orthographicSize = Mathf.Max(cam.orthographicSize, maxCameraSize);
         }
     }
 

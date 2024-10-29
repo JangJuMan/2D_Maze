@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MazeMove : MonoBehaviour
 {
-    private float mouse_speed = 1.0f;
+    private float mouse_speed = 2.0f;
     private float keyboard_speed = 0.4f;
 
     void Awake(){

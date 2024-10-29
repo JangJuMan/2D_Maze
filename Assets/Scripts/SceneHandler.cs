@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    void Awake(){
+        Application.targetFrameRate = 60;
+    }
+
     public void LoadMainScene(){
         SceneManager.LoadScene("MainScene");
     }
