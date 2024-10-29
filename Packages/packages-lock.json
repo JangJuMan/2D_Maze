@@ -1,17 +1,16 @@
 {
   "dependencies": {
     "com.google.ads.mobile": {
-      "version": "9.2.1",
+      "version": "9.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.google.external-dependency-manager": "1.2.181",
-        "com.unity.modules.androidjni": "1.0.0"
+        "com.google.external-dependency-manager": "1.2.179"
       },
       "url": "https://package.openupm.com"
     },
     "com.google.external-dependency-manager": {
-      "version": "1.2.181",
+      "version": "1.2.179",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -122,7 +121,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "2.5.1",
+      "version": "2.5.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -197,7 +196,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.6",
+      "version": "3.0.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
