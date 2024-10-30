@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-    public float zoomSpeed = 0.001f;
+    public float zoomSpeed = 0.0001f;
     float maxCameraSize = 5.0f;
+    float minCameraSize = 20.0f;
     private Camera cam;
 
     void Start(){
@@ -28,6 +29,7 @@ public class CameraHandler : MonoBehaviour
 
             cam.orthographicSize += deltaMagnitudeDiff * zoomSpeed;
             cam.orthographicSize = Mathf.Max(cam.orthographicSize, maxCameraSize);
+            cam.orthographicSize = Mathf.Min(cam.orthographicSize, minCameraSize);
         }
     }
 

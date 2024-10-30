@@ -1,12 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    public UIManager uiManger;
+
     void Awake(){
         Application.targetFrameRate = 60;
+    }
+
+    void FixedUpdate(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Debug.Log("Get Active Scene : "+ SceneManager.GetActiveScene().name);
+            switch(SceneManager.GetActiveScene().name){
+                case "MainScene" :
+                    uiManger.UI_OpenQuitPopup();
+                    break;
+                case "CharacterScene" :
+                case "Stages_solo" :
+                    LoadMainScene();
+                    break;
+                case "InGame_solo" :
+                    LoadStages_solo();
+                    break;
+            }
+        }
     }
 
     public void LoadMainScene(){
