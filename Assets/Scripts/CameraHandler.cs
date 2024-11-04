@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-    public float zoomSpeed = 0.0001f;
+    float zoomSpeed = 0.01f;
     float maxCameraSize = 5.0f;
     float minCameraSize = 20.0f;
     private Camera cam;
