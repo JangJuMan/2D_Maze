@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using GoogleMobileAds.Sample;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class UIManager : MonoBehaviour
     public PopupHandler hintPopup;
     public PopupHandler adPopup;
     public PopupHandler alertPopup;
+    public PopupHandler noAdPopup;
     public AdHandler adManager;
 
     public void UI_OpenQuitPopup(){
@@ -53,8 +55,19 @@ public class UIManager : MonoBehaviour
         alertPopup.Hide();
         Time.timeScale = 1.0f;
     }
+    public void UI_OpenNoAdPopup(){
+        noAdPopup.Show();
+        // 애니메이션 없이 adPopup 비활성화
+        adPopup.transform.gameObject.SetActive(false);
+        adPopup.popupBlocker.gameObject.SetActive(false);
+    }
+    public void UI_CloseNoAdPopup(){
+        // 애니메이션 없이 adPopup 활성화
+        adPopup.transform.gameObject.SetActive(true);
+        adPopup.popupBlocker.gameObject.SetActive(true);
+        noAdPopup.Hide();
+    }
     public void UI_ViewAd(){
-        adManager.LoadAd();
         adManager.ShowAd();
         Debug.Log("힌트개수 : before : " + PlayerPrefs.GetInt("userHintCnt"));
     }

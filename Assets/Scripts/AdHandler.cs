@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using System.Threading.Tasks;
 
 // Google Mob Ads Rewarded Ad 샘플코드 참조
 // https://github.com/googleads/googleads-mobile-unity/blob/main/samples/HelloWorld/Assets/Scripts/RewardedAdController.cs
@@ -27,9 +28,24 @@ namespace GoogleMobileAds.Sample
 
         private RewardedAd _rewardedAd;
 
+        // 광고 1개 시작하자마자 로드시켜두기
+        void Awake(){
+            if(_rewardedAd == null){
+                LoadAd();
+                // 스피너 사용 X
+                // AdLoadedStatus?.SetActive(false);
+                // Debug.Log("스피너 비활성화");
+            }
+        }
+
         // 광고 Load
         public void LoadAd()
         {
+            // 스피너 사용 X
+            // 광고 로드중 표시
+            // AdLoadedStatus?.SetActive(true);
+            Debug.Log("광고 로드 시작 / 스피너 활성화");
+
             // Clean up the old ad before loading a new one.
             if (_rewardedAd != null)
             {
@@ -40,10 +56,19 @@ namespace GoogleMobileAds.Sample
 
             // Create our request used to load the ad.
             var adRequest = new AdRequest();
+            
+            // 디바이스 테스트광고(되는건가...?)
+            // RequestConfiguration requestConfiguration = new RequestConfiguration();
+            // requestConfiguration.TestDeviceIds.Add("81df12fe-3378-45de-a947-b2edb0db7e37");
+            // MobileAds.SetRequestConfiguration(requestConfiguration);
+            
+            // Debug.Log("테스트 광고 추가");
 
             // Send the request to load the ad.
             RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
             {
+                Debug.Log("광고 콜백함수시작");
+
                 // If the operation failed with a reason.
                 if (error != null)
                 {
@@ -65,9 +90,10 @@ namespace GoogleMobileAds.Sample
                 // Register to ad events to extend functionality.
                 RegisterEventHandlers(ad);
 
-                // Inform the UI that the ad is ready.
-                // AdLoadedStatus가 null이 아니라면 SetActive(true)(null 이라면 null로 처리)
-                AdLoadedStatus?.SetActive(true);
+                // 스피너 사용 X
+                // 광고 로드 완료됨을 표시
+                // AdLoadedStatus?.SetActive(false);
+                Debug.Log("광고 콜백함수끝 / 스피너 비활성화");
             });
         }
 
@@ -91,11 +117,11 @@ namespace GoogleMobileAds.Sample
             }
             else
             {
+                // 광고가 아직 로드 안된 경우, 알려주기
+                uiManager.UI_OpenNoAdPopup();
                 Debug.LogError("Rewarded ad is not ready yet.");
+                Debug.LogError("광고가 로드되지 않았습니다. 네트워크 환경을 확인해주세요");
             }
-
-            // Inform the UI that the ad is not ready.
-            AdLoadedStatus?.SetActive(false);
         }
 
         // Destroy Ad
@@ -107,9 +133,6 @@ namespace GoogleMobileAds.Sample
                 _rewardedAd.Destroy();
                 _rewardedAd = null;
             }
-
-            // Inform the UI that the ad is not ready.
-            AdLoadedStatus?.SetActive(false);
         }
 
         // Unity Logs the ResponseInfo.
@@ -145,6 +168,8 @@ namespace GoogleMobileAds.Sample
             ad.OnAdFullScreenContentOpened += () =>
             {
                 Debug.Log("Rewarded ad full screen content opened.");
+                // 광고 재생 중, 다음 광고 미리 대기시켜두기
+                LoadAd();
             };
             // Raised when the ad closed full screen content.
             ad.OnAdFullScreenContentClosed += () =>
