@@ -5,7 +5,7 @@ using UnityEngine;
 public class MazeMove : MonoBehaviour
 {
     private float mouse_speed = 1.0f;
-    private float keyboard_speed = 0.4f;
+    private float keyboard_speed = 1.0f;
 
     void Awake(){
         
@@ -21,12 +21,19 @@ public class MazeMove : MonoBehaviour
 
     void Update(){
         if(Time.deltaTime != 0){
-            if(Input.GetMouseButton(0)){
-                transform.Rotate(0f, 0f, -Input.GetAxis("Mouse X") * mouse_speed, Space.World);
-                transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * mouse_speed, Space.World);
-            }
-            if(Input.GetButton("Horizontal")){
-                transform.Rotate(0f, 0f, Input.GetAxis("Horizontal") * keyboard_speed, Space.World);
+            int mazeMoveType = PlayerPrefs.GetInt("mazeMoveType");
+            switch(mazeMoveType){
+                case 0:
+                    if(Input.GetMouseButton(0)){
+                        transform.Rotate(0f, 0f, -Input.GetAxis("Mouse X") * mouse_speed, Space.World);
+                        transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * mouse_speed, Space.World);
+                    }
+                    break;
+                case 2:
+                    if(Input.GetButton("Horizontal")){
+                        transform.Rotate(0f, 0f, Input.GetAxis("Horizontal") * keyboard_speed, Space.World);
+                    }
+                    break;
             }
         }
     }

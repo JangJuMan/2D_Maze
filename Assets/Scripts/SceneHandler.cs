@@ -26,6 +26,9 @@ public class SceneHandler : MonoBehaviour
                 case "InGame_solo" :
                     LoadStages_solo();
                     break;
+                case "Settings":
+                    LoadMainScene();
+                    break;
             }
         }
     }
@@ -48,6 +51,7 @@ public class SceneHandler : MonoBehaviour
 
     public void LoadSettings(){
         // TODO : Setting  page
+        SceneManager.LoadScene("Settings");
     }
 
     public void LoadInGame_solo(){
