@@ -12,6 +12,21 @@ public class UIManager : MonoBehaviour
     public PopupHandler alertPopup;
     public PopupHandler noAdPopup;
     public AdHandler adManager;
+    public GameObject leftBtn;
+    public GameObject rightBtn;
+
+    void Start(){
+        if(leftBtn != null && rightBtn != null){
+            if(PlayerPrefs.GetInt("mazeMoveType") == 2){
+                leftBtn.SetActive(true);
+                rightBtn.SetActive(true);
+            }
+            else{
+                leftBtn.SetActive(false);
+                rightBtn.SetActive(false);
+            }
+        }
+    }
 
     public void UI_OpenQuitPopup(){
         quitPopup.Show();

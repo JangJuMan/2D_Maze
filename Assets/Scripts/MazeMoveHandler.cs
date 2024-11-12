@@ -5,7 +5,10 @@ using UnityEngine;
 public class MazeMove : MonoBehaviour
 {
     private float mouse_speed = 1.0f;
-    private float keyboard_speed = 1.0f;
+    // private float keyboard_speed = 1.0f;
+    private float btn_speed = 1.0f;
+    private bool isLeftBtnDown = false;
+    private bool isRightBtnDown = false;
 
     void Awake(){
         
@@ -30,9 +33,15 @@ public class MazeMove : MonoBehaviour
                     }
                     break;
                 case 2:
-                    if(Input.GetButton("Horizontal")){
-                        transform.Rotate(0f, 0f, Input.GetAxis("Horizontal") * keyboard_speed, Space.World);
+                    if(isLeftBtnDown){
+                        transform.Rotate(0f, 0f, btn_speed, Space.World);
                     }
+                    if(isRightBtnDown){
+                        transform.Rotate(0f, 0f, -btn_speed, Space.World);
+                    }
+                    // if(Input.GetButton("Horizontal")){
+                    //     transform.Rotate(0f, 0f, Input.GetAxis("Horizontal") * keyboard_speed, Space.World);
+                    // }
                     break;
             }
         }
@@ -50,5 +59,18 @@ public class MazeMove : MonoBehaviour
     }
 
     void OnDestroy(){
+    }
+    
+    public void LeftBtnDown(){
+        isLeftBtnDown = true;
+    }
+    public void LeftBtnUp(){
+        isLeftBtnDown = false;
+    }
+    public void RightBtnDown(){
+        isRightBtnDown = true;
+    }
+    public void RightBtnUp(){
+        isRightBtnDown = false;
     }
 }
