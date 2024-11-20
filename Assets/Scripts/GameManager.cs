@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
     public static GameManager Instance;
     public PopupHandler clearPopup;
     public PopupHandler hintPopup;
@@ -19,6 +20,14 @@ public class GameManager : MonoBehaviour
 
     private const float _timerStar1stPosition_x = -23.7f;
     private const float _timerSliderSize = 380.0f;
+    private const int _fullStar0 = 0;
+    private const int _fullStar1 = 1;
+    private const int _fullStar2 = 2;
+    private const int _emptyStar0 = 3;
+    private const int _emptyStar1 = 4;
+    private const int _emptyStar2 = 5;
+    private const int stageMaxHint = 3;
+
     float time = 0.0f;
     float coroutineInterval = 0.04f;
     int hintLevel = 0;
@@ -43,12 +52,12 @@ public class GameManager : MonoBehaviour
     }
 
     void SetTimerStarsPosition(){
-        timerStarImages[0].rectTransform.anchoredPosition = new Vector2(_timerStar1stPosition_x, 0);
-        timerStarImages[3].rectTransform.anchoredPosition = new Vector2(_timerStar1stPosition_x, 0);
-        timerStarImages[1].rectTransform.anchoredPosition = new Vector2(_timerSliderSize * ((stageGrade[2] - stageGrade[1]) / stageGrade[2]) + _timerStar1stPosition_x, 0);
-        timerStarImages[4].rectTransform.anchoredPosition = new Vector2(_timerSliderSize * ((stageGrade[2] - stageGrade[1]) / stageGrade[2]) + _timerStar1stPosition_x, 0);
-        timerStarImages[2].rectTransform.anchoredPosition = new Vector2(_timerSliderSize * ((stageGrade[2] - stageGrade[0]) / stageGrade[2]) + _timerStar1stPosition_x, 0);
-        timerStarImages[5].rectTransform.anchoredPosition = new Vector2(_timerSliderSize * ((stageGrade[2] - stageGrade[0]) / stageGrade[2]) + _timerStar1stPosition_x, 0);
+        timerStarImages[_fullStar0].rectTransform.anchoredPosition = new Vector2(_timerStar1stPosition_x, 0);
+        timerStarImages[_emptyStar0].rectTransform.anchoredPosition = new Vector2(_timerStar1stPosition_x, 0);
+        timerStarImages[_fullStar1].rectTransform.anchoredPosition = new Vector2(_timerSliderSize * ((stageGrade[2] - stageGrade[1]) / stageGrade[2]) + _timerStar1stPosition_x, 0);
+        timerStarImages[_emptyStar1].rectTransform.anchoredPosition = new Vector2(_timerSliderSize * ((stageGrade[2] - stageGrade[1]) / stageGrade[2]) + _timerStar1stPosition_x, 0);
+        timerStarImages[_fullStar2].rectTransform.anchoredPosition = new Vector2(_timerSliderSize * ((stageGrade[2] - stageGrade[0]) / stageGrade[2]) + _timerStar1stPosition_x, 0);
+        timerStarImages[_emptyStar2].rectTransform.anchoredPosition = new Vector2(_timerSliderSize * ((stageGrade[2] - stageGrade[0]) / stageGrade[2]) + _timerStar1stPosition_x, 0);
     }
 
     // Timer coroutine
@@ -58,16 +67,16 @@ public class GameManager : MonoBehaviour
             timerSlider.value = time / stageGrade[2];
 
             if(time > stageGrade[2]){
-                timerStarImages[0].gameObject.SetActive(false);
-                timerStarImages[3].gameObject.SetActive(true);
+                timerStarImages[_fullStar0].gameObject.SetActive(false);
+                timerStarImages[_emptyStar0].gameObject.SetActive(true);
             }
             else if(time > stageGrade[1]){
-                timerStarImages[1].gameObject.SetActive(false);
-                timerStarImages[4].gameObject.SetActive(true);
+                timerStarImages[_fullStar1].gameObject.SetActive(false);
+                timerStarImages[_emptyStar1].gameObject.SetActive(true);
             }
             else if(time > stageGrade[0]){
-                timerStarImages[2].gameObject.SetActive(false);
-                timerStarImages[5].gameObject.SetActive(true);
+                timerStarImages[_fullStar2].gameObject.SetActive(false);
+                timerStarImages[_emptyStar2].gameObject.SetActive(true);
             }
             yield return new WaitForSeconds(coroutineInterval);
         }
@@ -87,24 +96,24 @@ public class GameManager : MonoBehaviour
         }
 
         if(time <= stageGrade[0]){
-            starImages[0].gameObject.SetActive(true);
-            starImages[1].gameObject.SetActive(true);
-            starImages[2].gameObject.SetActive(true);
+            starImages[_fullStar0].gameObject.SetActive(true);
+            starImages[_fullStar1].gameObject.SetActive(true);
+            starImages[_fullStar2].gameObject.SetActive(true);
         }
         else if(time <= stageGrade[1]){
-            starImages[0].gameObject.SetActive(true);
-            starImages[1].gameObject.SetActive(true);
-            starImages[5].gameObject.SetActive(true);
+            starImages[_fullStar0].gameObject.SetActive(true);
+            starImages[_fullStar1].gameObject.SetActive(true);
+            starImages[_emptyStar2].gameObject.SetActive(true);
         }
         else if(time <= stageGrade[2]){
-            starImages[0].gameObject.SetActive(true);
-            starImages[4].gameObject.SetActive(true);
-            starImages[5].gameObject.SetActive(true);
+            starImages[_fullStar0].gameObject.SetActive(true);
+            starImages[_emptyStar1].gameObject.SetActive(true);
+            starImages[_emptyStar2].gameObject.SetActive(true);
         }
         else{
-            starImages[3].gameObject.SetActive(true);
-            starImages[4].gameObject.SetActive(true);
-            starImages[5].gameObject.SetActive(true);
+            starImages[_emptyStar0].gameObject.SetActive(true);
+            starImages[_emptyStar1].gameObject.SetActive(true);
+            starImages[_emptyStar2].gameObject.SetActive(true);
         }
     }
 
@@ -113,7 +122,7 @@ public class GameManager : MonoBehaviour
         userHintCnt = PlayerPrefs.GetInt("userHintCnt", 0);
         hintCntTxt.text = "(현재 보유 힌트 : " + userHintCnt +  "개)";
 
-        if(hintLevel < 3){
+        if(hintLevel < stageMaxHint){
             if(userHintCnt > 0){
                 return "CanUseHint";
             }

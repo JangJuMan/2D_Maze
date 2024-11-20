@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerHandler : MonoBehaviour
 {
     private SpriteRenderer skinImg;
+    private const int gyroType = 1;
     private float gravitySize = 9.81f;
 
     void Awake(){
@@ -18,9 +19,8 @@ public class PlayerHandler : MonoBehaviour
 
     void Update(){
         if(Time.deltaTime != 0){
-            if(PlayerPrefs.GetInt("mazeMoveType") == 1){
+            if(PlayerPrefs.GetInt("mazeMoveType") == gyroType){
                 Physics2D.gravity = Input.gyro.gravity.normalized * gravitySize;
-                Debug.Log(PlayerPrefs.GetInt("mazeMoveType"));
             }
         }
     }
