@@ -28,7 +28,7 @@ public class MazeMove : MonoBehaviour
             switch(mazeMoveType){
                 case 0:
                     if(Input.GetMouseButton(0)){
-                        transform.Rotate(0f, 0f, -Input.GetAxis("Mouse X") * mouse_speed, Space.World);
+                        transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") * mouse_speed, Space.World);
                         transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * mouse_speed, Space.World);
                     }
                     break;
