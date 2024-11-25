@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioHandler : MonoBehaviour
 {    
     public static AudioHandler Instance;
-    AudioSource audioSource;
     public AudioClip clip;
+    AudioSource audioSource;
 
     private void Awake(){
         if(Instance == null){

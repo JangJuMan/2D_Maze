@@ -1,9 +1,8 @@
- using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MazeMove : MonoBehaviour
 {
+    private float touch_speed = 0.1f;
     private float mouse_speed = 1.0f;
     // private float keyboard_speed = 1.0f;
     private float btn_speed = 1.0f;
@@ -19,7 +18,6 @@ public class MazeMove : MonoBehaviour
 
     void Start()
     {
-        // Application.targetFrameRate = 60;
     }
 
     void Update(){
@@ -27,7 +25,14 @@ public class MazeMove : MonoBehaviour
             int mazeMoveType = PlayerPrefs.GetInt("mazeMoveType");
             switch(mazeMoveType){
                 case 0:
-                    if(Input.GetMouseButton(0)){
+                    if(Input.touchCount == 1){ // For Mobile
+                        transform.Rotate(0f, 0f, Input.GetTouch(0).deltaPosition.x * touch_speed, Space.World);
+                        transform.Rotate(0f, 0f, Input.GetTouch(0).deltaPosition.y * touch_speed, Space.World);
+                    }
+                    else if(Input.touchCount == 2){
+                        // For Camera zoom Control (CanaraHandler.cs)
+                    }
+                    else if(Input.GetMouseButton(0)){ // For PC
                         transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") * mouse_speed, Space.World);
                         transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * mouse_speed, Space.World);
                     }
