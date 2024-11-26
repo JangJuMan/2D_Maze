@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -56,6 +53,10 @@ public class SceneHandler : MonoBehaviour
 
     public void LoadInGame_solo(){
         SceneManager.LoadScene("InGame_solo");
+    }
+
+    public void LoadSceneByName(string sceneName){
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ExitGame(){
