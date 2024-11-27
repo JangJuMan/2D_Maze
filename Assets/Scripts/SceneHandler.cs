@@ -26,6 +26,9 @@ public class SceneHandler : MonoBehaviour
                 case "Settings":
                     LoadMainScene();
                     break;
+                default :  // 솔로 플레이의 모든 레벨에서
+                    LoadStages_solo();
+                    break;
             }
         }
     }
