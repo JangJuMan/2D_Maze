@@ -7,10 +7,12 @@ public class PlayerHandler : MonoBehaviour
     private float gravitySize = 9.81f;
 
     void Awake(){
-        skinImg = GetComponent<SpriteRenderer>();
+        if(gameObject.CompareTag("Player")){
+            skinImg = GetComponent<SpriteRenderer>();
 
-        string skinName = PlayerPrefs.GetString("skinName", "character_0");
-        skinImg.sprite = Resources.Load<Sprite>($"Images/{skinName}");
+            string skinName = PlayerPrefs.GetString("skinName", "character_0");
+            skinImg.sprite = Resources.Load<Sprite>($"Images/{skinName}");
+        }
     }
 
     void Start(){
@@ -25,9 +27,12 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.CompareTag("Finish")){
-            GameManager.Instance.GameOver();
+    private void OnTriggerStay2D(Collider2D other){
+        if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Finish")){
+            GameManager.Instance.isPlayer1_arrived = true;
+        }
+        if(gameObject.CompareTag("Player2") && other.gameObject.CompareTag("Finish2")){
+            GameManager.Instance.isPlayer2_arrived = true;
         }
     }
 

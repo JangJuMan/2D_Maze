@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public float[] stageGrade;
     public GameObject[] hintWay;
     public Slider timerSlider;
+    public int numOfPlayer;
     
 
     private const float _timerStar1stPosition_x = -23.7f;
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour
     float coroutineInterval = 0.04f;
     int hintLevel = 0;
     int userHintCnt = 0;
+    public bool isPlayer1_arrived = false;
+    public bool isPlayer2_arrived = false;
 
 
     private void Awake(){
@@ -49,6 +52,20 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        switch(numOfPlayer){
+            case 1:
+                if(isPlayer1_arrived){
+                    GameOver();
+                }
+                break;
+            case 2:
+                if(isPlayer1_arrived && isPlayer2_arrived){
+                    GameOver();
+                }
+                break;
+        }
+        isPlayer1_arrived = false;
+        isPlayer2_arrived = false;
     }
 
     void SetTimerStarsPosition(){
