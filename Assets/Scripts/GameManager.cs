@@ -103,15 +103,18 @@ public class GameManager : MonoBehaviour
 
     // Game Over
     public void GameOver(){
-        StopCoroutine("SetTimer");
         Time.timeScale = 0.0f;
-        SetStars();
+        StopCoroutine("SetTimer");
+        
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        SetStars(sceneName);
+        UpdateCurrStage(sceneName);
         clearPopup.Show();
-        UpdateCurrStage();
     }
 
-    private void UpdateCurrStage(){
-        switch(SceneManager.GetActiveScene().name){
+    private void UpdateCurrStage(string currSceneName){
+        switch(currSceneName){
             case "Level1_1":
                 currStage = 2;
                 break;
@@ -131,7 +134,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SetStars(){
+    private void SetStars(string currSceneName){
+        int grade = -1;
         for(int i=0; i<starImages.Length; i++){
             starImages[i].gameObject.SetActive(false);
         }
@@ -140,21 +144,29 @@ public class GameManager : MonoBehaviour
             starImages[_fullStar0].gameObject.SetActive(true);
             starImages[_fullStar1].gameObject.SetActive(true);
             starImages[_fullStar2].gameObject.SetActive(true);
+            grade = 3;
         }
         else if(time <= stageGrade[1]){
             starImages[_fullStar0].gameObject.SetActive(true);
             starImages[_fullStar1].gameObject.SetActive(true);
             starImages[_emptyStar2].gameObject.SetActive(true);
+            grade = 2;
         }
         else if(time <= stageGrade[2]){
             starImages[_fullStar0].gameObject.SetActive(true);
             starImages[_emptyStar1].gameObject.SetActive(true);
             starImages[_emptyStar2].gameObject.SetActive(true);
+            grade = 1;
         }
         else{
             starImages[_emptyStar0].gameObject.SetActive(true);
             starImages[_emptyStar1].gameObject.SetActive(true);
             starImages[_emptyStar2].gameObject.SetActive(true);
+            grade = 0;
+        }
+
+        if(grade > PlayerPrefs.GetInt($"stageStars_{currSceneName}", -1)){
+            PlayerPrefs.SetInt($"stageStars_{currSceneName}", grade);
         }
     }
 
