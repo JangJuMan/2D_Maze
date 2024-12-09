@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] hintWay;
     public Slider timerSlider;
     public int numOfPlayer;
+    public bool isPlayer1_arrived = false;
+    public bool isPlayer2_arrived = false;
     
 
     private const float _timerStar1stPosition_x = -23.7f;
@@ -33,8 +36,7 @@ public class GameManager : MonoBehaviour
     float coroutineInterval = 0.04f;
     int hintLevel = 0;
     int userHintCnt = 0;
-    public bool isPlayer1_arrived = false;
-    public bool isPlayer2_arrived = false;
+    int currStage = 1;
 
 
     private void Awake(){
@@ -105,6 +107,28 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.0f;
         SetStars();
         clearPopup.Show();
+        UpdateCurrStage();
+    }
+
+    private void UpdateCurrStage(){
+        switch(SceneManager.GetActiveScene().name){
+            case "Level1_1":
+                currStage = 2;
+                break;
+            case "Level1_2":
+                currStage = 3;
+                break;
+            case "Level1_3":
+                currStage = 4;
+                break;
+            case "Level2_1":
+                currStage = 5;
+                break;
+        }
+        if(currStage > PlayerPrefs.GetInt("currStage", 1)){
+            PlayerPrefs.SetInt("currStage", currStage);
+            PlayerPrefs.Save();
+        }
     }
 
     private void SetStars(){

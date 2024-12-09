@@ -70,6 +70,7 @@ public class SettingHandler : MonoBehaviour
                     PlayerPrefs.SetInt("mazeMoveType", 2);
                     break;
             }
+            PlayerPrefs.Save();
         }
     }
 }

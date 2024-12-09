@@ -70,7 +70,5 @@ public class SceneHandler : MonoBehaviour
             Application.Quit(); // 어플리케이션 종료
             Debug.Log("Quit Application");
         #endif
-        // FOR DEBUG
-        PlayerPrefs.DeleteAll();
     }
 }
