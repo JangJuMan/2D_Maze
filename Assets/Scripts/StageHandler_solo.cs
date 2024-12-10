@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class StageHandler_solo : MonoBehaviour
 {
     public GameObject[] levelObjs;
+    public int maxStage;
 
     int currStage;
-    const int maxStage = 4;
 
     void Start(){
         // 현재 진행된 레벨까지만 접근 가능하도록
