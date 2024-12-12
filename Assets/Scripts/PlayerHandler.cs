@@ -28,11 +28,26 @@ public class PlayerHandler : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other){
+        if(other.gameObject.CompareTag("DoorController")){
+            GameManager.Instance.isDoorOpening = true;
+        }
         if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Finish")){
             GameManager.Instance.isPlayer1_arrived = true;
         }
         if(gameObject.CompareTag("Player2") && other.gameObject.CompareTag("Finish2")){
             GameManager.Instance.isPlayer2_arrived = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other){
+        if(other.gameObject.CompareTag("DoorController")){
+            GameManager.Instance.isDoorOpening = false;
+        }
+        if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Finish")){
+            GameManager.Instance.isPlayer1_arrived = false;
+        }
+        if(gameObject.CompareTag("Player2") && other.gameObject.CompareTag("Finish2")){
+            GameManager.Instance.isPlayer2_arrived = false;
         }
     }
 

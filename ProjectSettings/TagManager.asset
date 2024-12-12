@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Player2
   - Finish2
+  - DoorController
+  - test
   layers:
   - Default
   - TransparentFX

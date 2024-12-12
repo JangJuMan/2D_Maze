@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,9 +18,12 @@ public class GameManager : MonoBehaviour
     public float[] stageGrade;
     public GameObject[] hintWay;
     public Slider timerSlider;
+    public GameObject door;
     public int numOfPlayer;
     public bool isPlayer1_arrived = false;
     public bool isPlayer2_arrived = false;
+    public bool isDoorOpening = false;
+    public int currStage;
     
 
     private const float _timerStar1stPosition_x = -23.7f;
@@ -36,7 +40,8 @@ public class GameManager : MonoBehaviour
     float coroutineInterval = 0.04f;
     int hintLevel = 0;
     int userHintCnt = 0;
-    int currStage = 1;
+    double doorMoveDist = 0;
+
 
 
     private void Awake(){
@@ -54,20 +59,41 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        switch(numOfPlayer){
-            case 1:
-                if(isPlayer1_arrived){
-                    GameOver();
-                }
-                break;
-            case 2:
-                if(isPlayer1_arrived && isPlayer2_arrived){
-                    GameOver();
-                }
-                break;
+
+        if(Time.timeScale != 0.0f){
+            if(isDoorOpening){
+                OpenDoor();
+            }
+            else{
+                CloseDoor();
+            }
+            switch(numOfPlayer){
+                case 1:
+                    if(isPlayer1_arrived){
+                        GameOver();
+                    }
+                    break;
+                case 2:
+                    if(isPlayer1_arrived && isPlayer2_arrived){
+                        GameOver();
+                    }
+                    break;
+            }
         }
-        isPlayer1_arrived = false;
-        isPlayer2_arrived = false;
+    }
+
+    void OpenDoor(){
+        if(doorMoveDist < door.transform.localScale.x){
+            door.transform.Translate(Vector2.left * Time.deltaTime);
+            doorMoveDist += Time.deltaTime;
+        }
+    }
+
+    void CloseDoor(){
+        if(doorMoveDist > 0.0f){
+            door.transform.Translate(Vector2.right * Time.deltaTime);
+            doorMoveDist -= Time.deltaTime;
+        }
     }
 
     void SetTimerStarsPosition(){
@@ -109,26 +135,12 @@ public class GameManager : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
 
         SetStars(sceneName);
-        UpdateCurrStage(sceneName);
+        UpdateCurrStage();
         clearPopup.Show();
     }
 
-    private void UpdateCurrStage(string currSceneName){
-        switch(currSceneName){
-            case "Level1_1":
-                currStage = 2;
-                break;
-            case "Level1_2":
-                currStage = 3;
-                break;
-            case "Level1_3":
-                currStage = 4;
-                break;
-            case "Level2_1":
-                currStage = 5;
-                break;
-        }
-        if(currStage > PlayerPrefs.GetInt("currStage", 1)){
+    private void UpdateCurrStage(){
+        if(++currStage > PlayerPrefs.GetInt("currStage", 1)){
             PlayerPrefs.SetInt("currStage", currStage);
             PlayerPrefs.Save();
         }

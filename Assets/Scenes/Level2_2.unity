@@ -13211,6 +13211,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 662575690}
     - target: {fileID: 4866146665973296305, guid: 6941a6b36f8867c429074a0ea5349d7b, type: 3}
+      propertyPath: currStage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866146665973296305, guid: 6941a6b36f8867c429074a0ea5349d7b, type: 3}
       propertyPath: hintPopup
       value: 
       objectReference: {fileID: 6203935414573916863}
