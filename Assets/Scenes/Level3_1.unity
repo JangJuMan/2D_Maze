@@ -2347,7 +2347,7 @@ GameObject:
   - component: {fileID: 853682043}
   - component: {fileID: 853682045}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: DoorOpener
   m_TagString: DoorController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
