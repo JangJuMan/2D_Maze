@@ -9,9 +9,10 @@ public class SceneHandler : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    void FixedUpdate(){
+    void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
             Debug.Log("Get Active Scene : "+ SceneManager.GetActiveScene().name);
+            AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
             switch(SceneManager.GetActiveScene().name){
                 case "MainScene" :
                     uiManger.UI_OpenQuitPopup();
@@ -35,14 +36,17 @@ public class SceneHandler : MonoBehaviour
 
     public void LoadMainScene(){
         SceneManager.LoadScene("MainScene");
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
     }
 
     public void LoadCharacterScene(){
         SceneManager.LoadScene("CharacterScene");
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
     }
 
     public void LoadStages_solo(){
         SceneManager.LoadScene("Stages_solo");
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
     }
 
     public void LoadStage_multi(){
@@ -50,16 +54,13 @@ public class SceneHandler : MonoBehaviour
     }
 
     public void LoadSettings(){
-        // TODO : Setting  page
         SceneManager.LoadScene("Settings");
-    }
-
-    public void LoadInGame_solo(){
-        SceneManager.LoadScene("InGame_solo");
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
     }
 
     public void LoadSceneByName(string sceneName){
         SceneManager.LoadScene(sceneName);
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
     }
 
     public void ExitGame(){

@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class StageHandler_solo : MonoBehaviour
 {
     public GameObject[] levelObjs;
-    public int maxStage;
-
     int currStage;
 
     void Start(){

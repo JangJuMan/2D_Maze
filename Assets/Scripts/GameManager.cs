@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     // Game Over
     public void GameOver(){
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Clear);
         Time.timeScale = 0.0f;
         StopCoroutine("SetTimer");
         

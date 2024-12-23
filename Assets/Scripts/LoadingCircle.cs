@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 사용하지 않는 class
 public class LoadingCircle : MonoBehaviour
 {
     private RectTransform rectComponent;

@@ -27,6 +27,7 @@ namespace GoogleMobileAds.Sample
 #endif
 
         private RewardedAd _rewardedAd;
+        private const int rewardHint = 2;
 
         // 광고 1개 시작하자마자 로드시켜두기
         void Awake(){
@@ -109,7 +110,8 @@ namespace GoogleMobileAds.Sample
                                             reward.Amount,
                                             reward.Type));
                     int userHintCnt = PlayerPrefs.GetInt("userHintCnt", 0);
-                    PlayerPrefs.SetInt("userHintCnt", userHintCnt + 1);
+                    // 
+                    PlayerPrefs.SetInt("userHintCnt", userHintCnt + rewardHint);
                     Debug.Log("힌트개수 : after : " + userHintCnt);
                     uiManager.UI_CloseAdPopup();
                     uiManager.UI_OpenHintPopup();

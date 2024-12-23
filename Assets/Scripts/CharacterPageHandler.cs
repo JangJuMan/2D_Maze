@@ -15,6 +15,7 @@ public class CharacterPageHandler : MonoBehaviour
         GameObject obj = EventSystem.current.currentSelectedGameObject;
         string skinName = obj.name;
         skinHandler.SetSkinByName(skinName);
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
     }
 
 

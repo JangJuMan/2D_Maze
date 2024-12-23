@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void UI_OpenQuitPopup(){
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Out);
         quitPopup.Show();
     }
     public void UI_CloseQuitPopup(){
@@ -36,6 +37,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void UI_OpenHintPopup(){
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
         Time.timeScale=0.0f;
         
         switch(GameManager.Instance.HintCheck()){
@@ -59,14 +61,17 @@ public class UIManager : MonoBehaviour
         UI_CloseHintPopup();
     }
     public void UI_CloseHintPopup(){
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop2);
         hintPopup.Hide();
         Time.timeScale = 1.0f;
     }
     public void UI_CloseAdPopup(){
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop2);
         adPopup.Hide();
         Time.timeScale = 1.0f;
     }
     public void UI_CloseAlertPopup(){
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop2);
         alertPopup.Hide();
         Time.timeScale = 1.0f;
     }
@@ -77,6 +82,7 @@ public class UIManager : MonoBehaviour
         adPopup.popupBlocker.gameObject.SetActive(false);
     }
     public void UI_CloseNoAdPopup(){
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop2);
         // 애니메이션 없이 adPopup 활성화
         adPopup.transform.gameObject.SetActive(true);
         adPopup.popupBlocker.gameObject.SetActive(true);

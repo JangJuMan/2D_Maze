@@ -50,6 +50,8 @@ public class SettingHandler : MonoBehaviour
     }
 
     public void ActivateDragType(){
+        AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
+        
         GameObject obj = EventSystem.current.currentSelectedGameObject;
 
         if(currentActive != obj.name){
