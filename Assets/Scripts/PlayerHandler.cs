@@ -16,7 +16,12 @@ public class PlayerHandler : MonoBehaviour
     }
 
     void Start(){
-        Input.gyro.enabled = true;
+        if(PlayerPrefs.GetInt("mazeMoveType") == gyroType){
+            Input.gyro.enabled = true;
+        }
+        else{
+            Physics2D.gravity = Vector2.down * gravitySize;
+        }
     }
 
     void Update(){
