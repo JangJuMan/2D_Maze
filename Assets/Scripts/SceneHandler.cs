@@ -19,12 +19,9 @@ public class SceneHandler : MonoBehaviour
                     break;
                 case "CharacterScene" :
                 case "Stages_solo" :
-                    LoadMainScene();
-                    break;
                 case "InGame_solo" :
-                    LoadStages_solo();
-                    break;
                 case "Settings":
+                case "Explanation":
                     LoadMainScene();
                     break;
                 default :  // 솔로 플레이의 모든 레벨에서
@@ -72,6 +69,6 @@ public class SceneHandler : MonoBehaviour
             Debug.Log("Quit Application");
         #endif
         // FOR DEBUG
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
     }
 }
