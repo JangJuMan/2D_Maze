@@ -33,16 +33,19 @@ public class MazeMove : MonoBehaviour
         int mazeMoveType = PlayerPrefs.GetInt("mazeMoveType");
         switch(mazeMoveType){
             case (int)MoveType.Drag:
-                if(Input.touchCount == 1){ // For Mobile
-                    transform.Rotate(0f, 0f, Input.GetTouch(0).deltaPosition.x * touch_speed, Space.World);
-                    transform.Rotate(0f, 0f, Input.GetTouch(0).deltaPosition.y * touch_speed, Space.World);
-                }
-                // FOR DEBUG : PC 디버그용
-                else if(Input.GetMouseButton(0)){
-                    transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") * mouse_speed, Space.World);
-                    transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * mouse_speed, Space.World);
-                }
-                break;
+                #if UNITY_EDITOR
+                    // FOR DEBUG : PC 디버그용
+                    if(Input.GetMouseButton(0)){
+                        transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") * mouse_speed, Space.World);
+                        transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * mouse_speed, Space.World);
+                    }
+                    break;
+                #else
+                    if(Input.touchCount == 1){ // For Mobile
+                        transform.Rotate(0f, 0f, Input.GetTouch(0).deltaPosition.x * touch_speed, Space.World);
+                        transform.Rotate(0f, 0f, Input.GetTouch(0).deltaPosition.y * touch_speed, Space.World);
+                    }
+                #endif
             case (int)MoveType.Btn:
                 if(isLeftBtnDown){
                     transform.Rotate(0f, 0f, btn_speed, Space.World);

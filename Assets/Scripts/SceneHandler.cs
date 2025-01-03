@@ -6,7 +6,7 @@ public class SceneHandler : MonoBehaviour
     public UIManager uiManger;
 
     void Awake(){
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 120;
     }
 
     void Update(){

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using GoogleMobileAds.Api;
 using System.Threading.Tasks;
@@ -17,9 +18,11 @@ namespace GoogleMobileAds.Sample
         public GameObject AdLoadedStatus;
         public UIManager uiManager;
 
+        // 실제 광고 유닛 ID : ca-app-pub-7805719777410961/3701164839
         // 테스트용 유닛 ID
 #if UNITY_ANDROID
-        private const string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        // private const string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        private const string _adUnitId = "ca-app-pub-7805719777410961/3701164839";
 #elif UNITY_IPHONE
         private const string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
@@ -27,16 +30,23 @@ namespace GoogleMobileAds.Sample
 #endif
 
         private RewardedAd _rewardedAd;
-        private const int rewardHint = 2;
+        private const int rewardHint = 1;
+        private const float _loadDelay = 0.2f;
 
         // 광고 1개 시작하자마자 로드시켜두기
-        void Awake(){
+        void Start(){
             if(_rewardedAd == null){
-                LoadAd();
+                StartCoroutine("LoadAd_withDelay");
+                // LoadAd();
                 // 스피너 사용 X
                 // AdLoadedStatus?.SetActive(false);
-                // Debug.Log("스피너 비활성화");
             }
+        }
+
+        // 광고 로드시 반복적인 요청은 버그를 발생시키기 때문에, 딜레이 추가
+        IEnumerator LoadAd_withDelay(){
+            yield return new WaitForSeconds(_loadDelay);
+            LoadAd();
         }
 
         // 광고 Load
