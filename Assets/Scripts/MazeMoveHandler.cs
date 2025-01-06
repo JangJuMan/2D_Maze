@@ -6,7 +6,7 @@ public class MazeMove : MonoBehaviour
     private float touch_speed = 0.1f;
     private float mouse_speed = 1.0f;
     // private float keyboard_speed = 1.0f;
-    private float btn_speed = 1.0f;
+    private float btn_speed = 1.25f;
     private bool isLeftBtnDown = false;
     private bool isRightBtnDown = false;
 
@@ -42,9 +42,18 @@ public class MazeMove : MonoBehaviour
                     break;
                 #else
                     if(Input.touchCount == 1){ // For Mobile
-                        transform.Rotate(0f, 0f, Input.GetTouch(0).deltaPosition.x * touch_speed, Space.World);
-                        transform.Rotate(0f, 0f, Input.GetTouch(0).deltaPosition.y * touch_speed, Space.World);
+                        Touch touch = Input.GetTouch(0);
+                        float rotateX = touch.deltaPosition.x * touch_speed;
+                        float rotateY = touch.deltaPosition.y * touch_speed;
+                        if(touch.position.x < (Screen.width/2)){
+                            rotateY *= -1;
+                        }
+                        if(touch.position.y > (Screen.height/2)){
+                            rotateX *= -1;
+                        }
+                        transform.Rotate(0f, 0f, rotateX + rotateY, Space.World);
                     }
+                    break;
                 #endif
             case (int)MoveType.Btn:
                 if(isLeftBtnDown){
