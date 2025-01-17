@@ -46,10 +46,6 @@ public class SceneHandler : MonoBehaviour
         AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
     }
 
-    public void LoadStage_multi(){
-        // TODO : Multi Play Stage 
-    }
-
     public void LoadSettings(){
         SceneManager.LoadScene("Settings");
         AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);

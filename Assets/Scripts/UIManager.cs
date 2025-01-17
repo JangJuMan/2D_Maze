@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
 
     void Start(){
         if(leftBtn != null && rightBtn != null){
-            if(PlayerPrefs.GetInt("mazeMoveType") == 2){
+            if(PlayerPrefs.GetInt("mazeMoveType") == (int)MazeMoveHandler.MoveType.Btn){  
                 leftBtn.SetActive(true);
                 rightBtn.SetActive(true);
             }
@@ -41,16 +41,14 @@ public class UIManager : MonoBehaviour
         Time.timeScale=0.0f;
         
         switch(GameManager.Instance.HintCheck()){
-            case "CanUseHint" :
+            case GameManager.HintType.CanUseHint :
                 hintPopup.Show();
                 break;
-            case "NoHint" :
+            case GameManager.HintType.NoHint :
                 adPopup.Show();
-                Debug.Log("사용 가능한 힌트가 없습니다");
                 break;
-            case "AlreadyUsed":
+            case GameManager.HintType.AlreadyUsed:
                 alertPopup.Show();
-                Debug.Log("해당 스테이지에서 힌트를 모두 사용하셨습니다");
                 break;
             default :
                 break;
@@ -79,19 +77,14 @@ public class UIManager : MonoBehaviour
         noAdPopup.Show();
         // 애니메이션 없이 adPopup 비활성화
         adPopup.transform.gameObject.SetActive(false);
-        adPopup.popupBlocker.gameObject.SetActive(false);
     }
     public void UI_CloseNoAdPopup(){
         AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop2);
         // 애니메이션 없이 adPopup 활성화
         adPopup.transform.gameObject.SetActive(true);
-        adPopup.popupBlocker.gameObject.SetActive(true);
         noAdPopup.Hide();
     }
     public void UI_ViewAd(){
         adManager.ShowAd();
-        Debug.Log("힌트개수 : before : " + PlayerPrefs.GetInt("userHintCnt"));
     }
-
-
 }

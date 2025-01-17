@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerHandler : MonoBehaviour
 {
     private SpriteRenderer skinImg;
-    private const int gyroType = 1;
-    private float gravitySize = 9.81f;
+    private const int _gyroType = 1;
+    private const float gravitySize = 9.81f;
 
     void Awake(){
         if(gameObject.CompareTag("Player")){
@@ -16,7 +16,7 @@ public class PlayerHandler : MonoBehaviour
     }
 
     void Start(){
-        if(PlayerPrefs.GetInt("mazeMoveType") == gyroType){
+        if(PlayerPrefs.GetInt("mazeMoveType") == (int)MazeMoveHandler.MoveType.Gyro){
             Input.gyro.enabled = true;
         }
         else{
@@ -26,7 +26,7 @@ public class PlayerHandler : MonoBehaviour
 
     void Update(){
         if(Time.deltaTime != 0){
-            if(PlayerPrefs.GetInt("mazeMoveType") == gyroType){
+            if(PlayerPrefs.GetInt("mazeMoveType") == (int)MazeMoveHandler.MoveType.Gyro){
                 Physics2D.gravity = Input.gyro.gravity.normalized * gravitySize;
             }
         }

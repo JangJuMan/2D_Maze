@@ -7,12 +7,7 @@ public class StageLevels : MonoBehaviour
 {
     Transform child;
 
-    private const int FstarL = 0;
-    private const int FstarR = 1;
-    private const int FstarM = 2;
-    private const int EstarL = 3;
-    private const int EstarR = 4;
-    private const int EstarM = 5;
+    private enum StageStars {FstarL, FstarR, FstarM, EstarL, EstarR, EstarM}
 
     string currStageName;
     int currStageStars;
@@ -28,24 +23,24 @@ public class StageLevels : MonoBehaviour
         child = gameObject.transform.GetChild(0);
         switch(currStageStars){
             case 0:
-                child.GetChild(EstarL).gameObject.SetActive(true);
-                child.GetChild(EstarR).gameObject.SetActive(true);
-                child.GetChild(EstarM).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.EstarL).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.EstarR).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.EstarM).gameObject.SetActive(true);
                 break;
             case 1:
-                child.GetChild(EstarL).gameObject.SetActive(true);
-                child.GetChild(EstarR).gameObject.SetActive(true);
-                child.GetChild(FstarM).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.EstarL).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.EstarR).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.FstarM).gameObject.SetActive(true);
                 break;
             case 2:
-                child.GetChild(FstarL).gameObject.SetActive(true);
-                child.GetChild(EstarR).gameObject.SetActive(true);
-                child.GetChild(FstarM).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.FstarL).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.EstarR).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.FstarM).gameObject.SetActive(true);
                 break;
             case 3:
-                child.GetChild(FstarL).gameObject.SetActive(true);
-                child.GetChild(FstarR).gameObject.SetActive(true);
-                child.GetChild(FstarM).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.FstarL).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.FstarR).gameObject.SetActive(true);
+                child.GetChild((int)StageStars.FstarM).gameObject.SetActive(true);
                 break;
         }
     }

@@ -1,14 +1,16 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SkinHandler : MonoBehaviour
 {
     private Image img;
-    string skinName;
+    private string skinName;
+    private const string defaultSkin = "character_0";
 
     void Start(){
         img = GetComponent<Image>();
-        skinName = PlayerPrefs.GetString("skinName", "character_0");
+        skinName = PlayerPrefs.GetString("skinName", defaultSkin);
         SetSkinByName(skinName);
     }
 

@@ -6,9 +6,9 @@ using DG.Tweening;
 public class PopupHandler : MonoBehaviour
 {
     public GameObject popupBlocker;
-    public float maxScale = 1.1f;
-    public float minScale = 0.2f;
-    public float originScale = 1.0f;
+    private const float maxScale = 1.1f;
+    private const float minScale = 0.2f;
+    private const float originScale = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,7 @@ public class PopupHandler : MonoBehaviour
         // var : 컴파일러가 자동으로 형식 결정
         var seq = DOTween.Sequence().SetUpdate(true);
 
-        // DOScale 의 첫 번째 파라미터는 목표 scale 값, 두번째 시간
+        // DOScale 의 첫 번째 파라미터는 목표 scale 값, 두번째는 시간
         // 최대로 커졌다가, 원래 팝업창 사이즈로 줄어드는 애니메이션 예약
         seq.Append(transform.DOScale(maxScale, 0.2f));
         seq.Append(transform.DOScale(originScale, 0.1f));

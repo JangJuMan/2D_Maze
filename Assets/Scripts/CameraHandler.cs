@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-    float zoomSpeed = 0.01f;
-    float maxCameraSize = 5.0f;
-    float minCameraSize = 20.0f;
+    private const float zoomSpeed = 0.01f;
+    private const float maxCameraSize = 5.0f;
+    private const float minCameraSize = 20.0f;
     private Camera cam;
 
     void Start(){
@@ -32,62 +32,4 @@ public class CameraHandler : MonoBehaviour
             cam.orthographicSize = Mathf.Min(cam.orthographicSize, minCameraSize);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // private float zoomSpeed = 3.0f;
-    // private float minZoomSize = 3.0f;
-    // private float maxZoomSize = 10.0f;
-
-    // private float targetZoomSize;
-    // private Camera cam;
-
-    // void Start(){
-    //     cam = GetComponent<Camera>();
-    //     targetZoomSize = cam.orthographicSize;
-    // }
-
-    // void Update(){
-    //     ControllerZoom();
-
-    //     UpdateZoom();
-    // }
-
-    // private void ControllerZoom(){
-    //     var scrollInput = Input.GetAxis("Mouse ScrollWheel");
-    //     var hasScrollInput = Mathf.Abs(scrollInput) > Mathf.Epsilon;
-    //     if(!hasScrollInput){
-    //         return;
-    //     }
-
-    //     var newSize = cam.orthographicSize - scrollInput * zoomSpeed;
-
-    //     targetZoomSize = Mathf.Clamp(newSize, minZoomSize, maxZoomSize);
-    // }
-
-    // private void UpdateZoom(){
-    //     if(Math.Abs(targetZoomSize - cam.orthographicSize) < Mathf.Epsilon){
-    //         return;
-    //     }
-
-    //     var mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
-    //     var cameraTransform = transform;
-    //     var currCameraPos = cameraTransform.position;
-    //     var offsetCamera = mouseWorldPos - currCameraPos - (mouseWorldPos - currCameraPos) / (cam.orthographicSize / targetZoomSize);
-
-    //     cam.orthographicSize = targetZoomSize;
-
-    //     currCameraPos += offsetCamera;
-    //     cameraTransform.position = currCameraPos;
-    // }
 }

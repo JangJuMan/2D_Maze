@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class MazeMove : MonoBehaviour
+public class MazeMoveHandler : MonoBehaviour
 {
-    private float move_speed = 0.01f;
-    private float touch_speed = 0.1f;
-    private float mouse_speed = 1.0f;
-    // private float keyboard_speed = 1.0f;
-    private float btn_speed = 1.25f;
+    private const float move_speed = 0.005f;
+    private const float touch_speed = 0.1f;
+    private const float mouse_speed = 1.0f;
+    private const float btn_speed = 1.25f;
     private bool isLeftBtnDown = false;
     private bool isRightBtnDown = false;
 
@@ -21,10 +20,11 @@ public class MazeMove : MonoBehaviour
 
     public void ViewControl(){
         if(Input.touchCount == 2){
-            // Camera Zoom (CameraHandler.cs)
-            // Maze Move(MazeMoveHandler.cs)
-            float moveX = (Input.GetTouch(0).deltaPosition.x + Input.GetTouch(1).deltaPosition.x) * move_speed * 0.5f;
-            float moveY = (Input.GetTouch(0).deltaPosition.y + Input.GetTouch(1).deltaPosition.y) * move_speed * 0.5f;
+            // Camera Zoom (CameraHandler.cs에 구현)
+            
+            // Maze Move
+            float moveX = (Input.GetTouch(0).deltaPosition.x + Input.GetTouch(1).deltaPosition.x) * move_speed;
+            float moveY = (Input.GetTouch(0).deltaPosition.y + Input.GetTouch(1).deltaPosition.y) * move_speed;
             transform.Translate(moveX, moveY, 0, Space.World);
         }
     }
@@ -34,7 +34,7 @@ public class MazeMove : MonoBehaviour
         switch(mazeMoveType){
             case (int)MoveType.Drag:
                 #if UNITY_EDITOR
-                    // FOR DEBUG : PC 디버그용
+                    // FOR DEBUG : PC판 디버그용
                     if(Input.GetMouseButton(0)){
                         transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") * mouse_speed, Space.World);
                         transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * mouse_speed, Space.World);
@@ -55,6 +55,9 @@ public class MazeMove : MonoBehaviour
                     }
                     break;
                 #endif
+            case (int)MoveType.Gyro:
+                // PlayerHandler.cs에서 처리함
+                break;
             case (int)MoveType.Btn:
                 if(isLeftBtnDown){
                     transform.Rotate(0f, 0f, btn_speed, Space.World);

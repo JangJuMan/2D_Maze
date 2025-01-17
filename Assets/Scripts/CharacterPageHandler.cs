@@ -17,6 +17,4 @@ public class CharacterPageHandler : MonoBehaviour
         skinHandler.SetSkinByName(skinName);
         AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.Pop);
     }
-
-
 }

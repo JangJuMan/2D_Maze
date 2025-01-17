@@ -7,16 +7,16 @@ public class AudioHandler : MonoBehaviour
     [Header("#BGM")]
     public AudioClip bgmClip;
     public float bgmVolume;
-    AudioSource bgmPlayer;
+    private AudioSource bgmPlayer;
 
     [Header("#SFX")]
     public AudioClip[] sfxClips;
     public float sfxVolume;
     public int channels;
-    AudioSource[] sfxPlayers;
-    int channelIndex;
+    private AudioSource[] sfxPlayers;
 
     public enum Sfx {Pop, Pop2, Pop3, Clear, Out}
+    private int channelIndex;
 
     void Awake(){
         if(Instance == null){

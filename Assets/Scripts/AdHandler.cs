@@ -14,14 +14,10 @@ namespace GoogleMobileAds.Sample
     
     public class AdHandler : MonoBehaviour
     {
-        // 로딩 표현용 circle Spinner
-        public GameObject AdLoadedStatus;
         public UIManager uiManager;
 
-        // 실제 광고 유닛 ID : ca-app-pub-7805719777410961/3701164839
-        // 테스트용 유닛 ID
 #if UNITY_ANDROID
-        // private const string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        // private const string _adUnitId = "ca-app-pub-3940256099942544/5224354917"; // 테스트 광고 ID
         private const string _adUnitId = "ca-app-pub-7805719777410961/3701164839";
 #elif UNITY_IPHONE
         private const string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
@@ -37,9 +33,7 @@ namespace GoogleMobileAds.Sample
         void Start(){
             if(_rewardedAd == null){
                 StartCoroutine("LoadAd_withDelay");
-                // LoadAd();
-                // 스피너 사용 X
-                // AdLoadedStatus?.SetActive(false);
+                // LoadAd();  // 딜레이 없는 버전
             }
         }
 
@@ -52,34 +46,18 @@ namespace GoogleMobileAds.Sample
         // 광고 Load
         public void LoadAd()
         {
-            // 스피너 사용 X
-            // 광고 로드중 표시
-            // AdLoadedStatus?.SetActive(true);
-            Debug.Log("광고 로드 시작 / 스피너 활성화");
-
             // Clean up the old ad before loading a new one.
             if (_rewardedAd != null)
             {
                 DestroyAd();
             }
 
-            // Debug.Log("Loading rewarded ad.");
-
             // Create our request used to load the ad.
-            var adRequest = new AdRequest();
-            
-            // 디바이스 테스트광고(되는건가...?)
-            // RequestConfiguration requestConfiguration = new RequestConfiguration();
-            // requestConfiguration.TestDeviceIds.Add("81df12fe-3378-45de-a947-b2edb0db7e37");
-            // MobileAds.SetRequestConfiguration(requestConfiguration);
-            
-            // Debug.Log("테스트 광고 추가");
+            var adRequest = new AdRequest();;
 
             // Send the request to load the ad.
             RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
             {
-                Debug.Log("광고 콜백함수시작");
-
                 // If the operation failed with a reason.
                 if (error != null)
                 {
@@ -100,11 +78,6 @@ namespace GoogleMobileAds.Sample
 
                 // Register to ad events to extend functionality.
                 RegisterEventHandlers(ad);
-
-                // 스피너 사용 X
-                // 광고 로드 완료됨을 표시
-                // AdLoadedStatus?.SetActive(false);
-                Debug.Log("광고 콜백함수끝 / 스피너 비활성화");
             });
         }
 
@@ -131,7 +104,6 @@ namespace GoogleMobileAds.Sample
             {
                 // 광고가 아직 로드 안된 경우, 알려주기
                 uiManager.UI_OpenNoAdPopup();
-                Debug.LogError("Rewarded ad is not ready yet.");
                 Debug.LogError("광고가 로드되지 않았습니다. 네트워크 환경을 확인해주세요");
             }
         }
