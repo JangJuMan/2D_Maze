@@ -10,8 +10,8 @@
 
 # 설명
 > #### 공이 아닌 미로가 움직이는 퍼즐입니다. <br/>
-> ![image](https://github.com/user-attachments/assets/3864e3dd-bac1-4256-b203-d5af2ecb6c5d)
-> ![image](https://github.com/user-attachments/assets/f30f14fc-820f-49ee-82ad-d61ea6ba3271)
+> ![image](https://github.com/user-attachments/assets/a272ea6f-5bf9-4683-aa32-6dc540a661eb)
+
 <br/>
 
 > #### 드래그, 버튼, 자이로센서를 이용하여 미로를 조작합니다. <br/>
@@ -39,6 +39,8 @@
 # 출시
 > Google Play Store / 비공개 테스트(alpha) 진행중<br/>
 > 비공개 테스트 링크(테스터 계정 등록 필요) : https://play.google.com/store/apps/details?id=com.letterb.theGravity
+> ![image](https://github.com/user-attachments/assets/ae3ade25-3684-4412-a559-177fb4ce4794)
+
 <br/>
 
 # Github Flow
