@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -192,7 +193,13 @@ public class GameManager : MonoBehaviour
     // Hint
     public HintType HintCheck(){
         userHintCnt = PlayerPrefs.GetInt("userHintCnt", 0);
-        hintCntTxt.text = "(현재 보유 힌트 : " + userHintCnt +  "개)";
+        if(Application.systemLanguage == SystemLanguage.Korean){
+            hintCntTxt.text = "(현재 보유 힌트 : " + userHintCnt +  "개)";
+        }
+        else{
+            hintCntTxt.text = "(Hint count : " + userHintCnt +  ")";
+        }
+
 
         if(hintLevel < _stageMaxHint){
             if(userHintCnt > 0){

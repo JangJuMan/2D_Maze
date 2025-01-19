@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Language_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ea17c01c4d37e124f870dea055c87d68, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 188048670720
+    m_Localized: SETTING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14674033836032
+    m_Localized: HOW TO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20639751798784
+    m_Localized: PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23233006075904
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23502074871808
+    m_Localized: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23788709412864
+    m_Localized: Do you want to Quit?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25207944445952
+    m_Localized: Soccer 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25751723376640
+    m_Localized: Soccer 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26254192607232
+    m_Localized: Basket 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26722960605184
+    m_Localized: Basket 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26885607325696
+    m_Localized: Volley 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27191267229696
+    m_Localized: Volley 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27450039009280
+    m_Localized: Beach Volley
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27585070432256
+    m_Localized: Tennis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27791535046656
+    m_Localized: Base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27925274624000
+    m_Localized: Bowling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27999710937088
+    m_Localized: Golf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28119164715008
+    m_Localized: :)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29681823973376
+    m_Localized: How to PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30731192696832
+    m_Localized: 'Move the ball
+
+      to Destination,
+
+      using Gravity'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31829668331520
+    m_Localized: Zoom In/Out
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32338663899136
+    m_Localized: 'You can zoom in and out
+
+      the in-game screen
+
+      using
+      2 fingers'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33138421202944
+    m_Localized: Move Screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33285280563200
+    m_Localized: 'You can move the
+
+      in-game Screen,
+
+      using 2 fingers'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33793512767488
+    m_Localized: Control Type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34152180285440
+    m_Localized: Drag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34266789642240
+    m_Localized: Gyro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34532062593024
+    m_Localized: Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34890784636928
+    m_Localized: STAGE 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35291038679040
+    m_Localized: STAGE 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35347686948864
+    m_Localized: STAGE 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36033631813632
+    m_Localized: Watching Ad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36198103056384
+    m_Localized: Not Enough HINT...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36694213722112
+    m_Localized: Watch Ad and Get a HINT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38160450125824
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38388276330496
+    m_Localized: 'You already use
+
+      All Hints'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39184426532864
+    m_Localized: STAGE CLEAR!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39656579334144
+    m_Localized: Do you use HINT?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43061494349824
+    m_Localized: "The Ad didn't load.\nTry again later or \nPlease check your\nNetwork
+      environment"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44094475927552
+    m_Localized: STAGE
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
