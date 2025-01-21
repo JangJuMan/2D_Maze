@@ -194,6 +194,65 @@ MonoBehaviour:
     m_Localized: STAGE
     m_Metadata:
       m_Items: []
+  - m_Id: 473316935794688
+    m_Localized: "Need \u2605 x 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 479616914620416
+    m_Localized: "Need \u2605 x 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 483695535521792
+    m_Localized: "Need \u2605 x 5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484078060240896
+    m_Localized: "Need \u2605 x 8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484332197314560
+    m_Localized: "Need \u2605 x 10"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484763849916416
+    m_Localized: "Need \u2605 x 12"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 484934503563264
+    m_Localized: "Need \u2605 x 15"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 485340969369600
+    m_Localized: "Need \u2605 x 18"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 485607991345152
+    m_Localized: "Need \u2605 x 20"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 485805270433792
+    m_Localized: "Need \u2605 x 23"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 485956760305664
+    m_Localized: "Need \u2605 x 25"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 489128547516416
+    m_Localized: Skins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 489129638035456
+    m_Localized: 'You can use
+
+      more diverse skins,
+
+      to collect Stars
+
+      for
+      each stage'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

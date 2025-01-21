@@ -92,7 +92,7 @@ namespace GoogleMobileAds.Sample
                     Debug.Log(String.Format("Rewarded ad granted a reward: {0} {1}",
                                             reward.Amount,
                                             reward.Type));
-                    int userHintCnt = PlayerPrefs.GetInt("userHintCnt", 0);
+                    int userHintCnt = PlayerPrefs.GetInt("userHintCnt");
                     // 
                     PlayerPrefs.SetInt("userHintCnt", userHintCnt + rewardHint);
                     Debug.Log("힌트개수 : after : " + userHintCnt);

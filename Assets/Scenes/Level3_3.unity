@@ -4504,7 +4504,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 0.6839622, b: 0.8730871, a: 0.5176471}
+  m_BackGroundColor: {r: 0.7830189, g: 0.58672845, b: 0.5686275, a: 0.5176471}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -19355,15 +19355,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4866146665973296305, guid: 6941a6b36f8867c429074a0ea5349d7b, type: 3}
       propertyPath: stageGrade.Array.data[0]
-      value: 115
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4866146665973296305, guid: 6941a6b36f8867c429074a0ea5349d7b, type: 3}
       propertyPath: stageGrade.Array.data[1]
-      value: 130
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4866146665973296305, guid: 6941a6b36f8867c429074a0ea5349d7b, type: 3}
       propertyPath: stageGrade.Array.data[2]
-      value: 160
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4866146665973296305, guid: 6941a6b36f8867c429074a0ea5349d7b, type: 3}
       propertyPath: starImages.Array.data[0]
@@ -19648,6 +19648,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3446272567149959860, guid: e850f6fc3988f9b4680bb36a060099f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999877534058497534, guid: e850f6fc3988f9b4680bb36a060099f1, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4276228509841978661, guid: e850f6fc3988f9b4680bb36a060099f1, type: 3}

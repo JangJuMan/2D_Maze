@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     private const float _coroutineInterval = 0.1f;
     private const int _defaultStage = 1;
     private const int _stageMaxHint = 3;
+    private const int _defaultHint = 1;
 
     private float time = 0.0f;
     private int hintLevel = 0;
@@ -192,7 +193,7 @@ public class GameManager : MonoBehaviour
 
     // Hint
     public HintType HintCheck(){
-        userHintCnt = PlayerPrefs.GetInt("userHintCnt", 0);
+        userHintCnt = PlayerPrefs.GetInt("userHintCnt", _defaultHint);
         if(Application.systemLanguage == SystemLanguage.Korean){
             hintCntTxt.text = "(현재 보유 힌트 : " + userHintCnt +  "개)";
         }
