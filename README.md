@@ -5,7 +5,11 @@
 <br/>
 
 # Demo
-> https://www.youtube.com/watch?v=amUteTapYnY
+> #### KR version
+> https://www.youtube.com/watch?v=6RRc1wMB6Vc <br/>
+
+> #### ENG version
+> https://youtube.com/watch?v=3qjTJjplPM0 <br/>
 <br/>
 
 # 설명
