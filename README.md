@@ -51,9 +51,10 @@
 
 
 # 출시
-> Google Play Store / 비공개 테스트(alpha) 진행중<br/>
-> 비공개 테스트 링크(테스터 계정 등록 필요) : https://play.google.com/store/apps/details?id=com.letterb.theGravity
-> ![image](https://github.com/user-attachments/assets/ae3ade25-3684-4412-a559-177fb4ce4794)
+> #### Google Play Store
+> https://play.google.com/store/apps/details?id=com.letterb.theGravity<br/>
+> ![image](https://github.com/user-attachments/assets/be2b0a9c-fb60-4865-a2af-1656b16a84a2)
+
 
 <br/>
 
