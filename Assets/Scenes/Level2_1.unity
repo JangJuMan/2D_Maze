@@ -6161,6 +6161,10 @@ PrefabInstance:
     - target: {fileID: 1860375833853646535, guid: ce96fe791bc0d54438bdb38ef2647873, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1093014856}
+    - target: {fileID: 1860375833853646535, guid: ce96fe791bc0d54438bdb38ef2647873, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UI_CloseNoAdPopup
       objectReference: {fileID: 0}
     - target: {fileID: 2843888903011008746, guid: ce96fe791bc0d54438bdb38ef2647873, type: 3}
       propertyPath: m_Name
