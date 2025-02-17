@@ -19656,7 +19656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3999877534058497534, guid: e850f6fc3988f9b4680bb36a060099f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4276228509841978661, guid: e850f6fc3988f9b4680bb36a060099f1, type: 3}
       propertyPath: popupBlocker
