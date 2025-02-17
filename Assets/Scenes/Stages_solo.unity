@@ -7588,6 +7588,7 @@ MonoBehaviour:
   - {fileID: 2137503671}
   - {fileID: 1590728170}
   - {fileID: 1176904443}
+  scrollRect: {fileID: 2090804089}
 --- !u!4 &1561734765
 Transform:
   m_ObjectHideFlags: 0
@@ -10193,7 +10194,19 @@ MonoBehaviour:
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1561734764}
+        m_TargetAssemblyTypeName: StageHandler_solo, Assembly-CSharp
+        m_MethodName: SaveScrollRectPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2090804090
 MonoBehaviour:
   m_ObjectHideFlags: 0
