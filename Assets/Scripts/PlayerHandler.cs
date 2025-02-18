@@ -67,4 +67,14 @@ public class PlayerHandler : MonoBehaviour
             GameManager.Instance.isPlayer2_arrived = true;
         }
     }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Finish")){
+            GameManager.Instance.isPlayer1_arrived = false;
+        }
+        if(gameObject.CompareTag("Player2") && other.gameObject.CompareTag("Finish2")){
+            GameManager.Instance.isPlayer2_arrived = false;
+        }
+    }
 }
