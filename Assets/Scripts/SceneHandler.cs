@@ -68,6 +68,6 @@ public class SceneHandler : MonoBehaviour
             Debug.Log("Quit Application");
         #endif
         // FOR DEBUG
-        // PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 }
