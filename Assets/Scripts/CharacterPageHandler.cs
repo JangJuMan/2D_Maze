@@ -8,8 +8,6 @@ public class CharacterPageHandler : MonoBehaviour
     public SkinHandler skinHandler;
     public Text starCnt;
 
-    private const int _maxStage = 3;
-    private const int _maxLevel = 3;
     private int totalStar = -1;
 
     void Awake(){
@@ -31,8 +29,8 @@ public class CharacterPageHandler : MonoBehaviour
         
         // 최초 1회만 계산
         int starCnt = 0;
-        for(int stage=1; stage<=_maxStage; stage++){
-            for(int level=1; level<=_maxLevel; level++){
+        for(int stage=1; stage<=MainController.Instance.GetMaxStage(); stage++){
+            for(int level=1; level<=MainController.Instance.GetMaxLevel(); level++){
                 starCnt += PlayerPrefs.GetInt($"stageStars_Level{stage}_{level}", 0);
             }
         }

@@ -7,6 +7,9 @@ public class SceneHandler : MonoBehaviour
 
     void Awake(){
         Application.targetFrameRate = 120;
+        //FOR DEBUG
+        // PlayerPrefs.SetInt("currStage", 12);
+        // PlayerPrefs.SetInt("userHintCnt", 12);
     }
 
     void Update(){
@@ -19,7 +22,7 @@ public class SceneHandler : MonoBehaviour
                     break;
                 case "CharacterScene" :
                 case "Stages_solo" :
-                case "InGame_solo" :
+                case "InGame_solo" :  // 현재 사용하지 않는 페이지
                 case "Settings":
                 case "Explanation":
                     LoadMainScene();

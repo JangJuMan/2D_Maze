@@ -253,6 +253,10 @@ MonoBehaviour:
       each stage'
     m_Metadata:
       m_Items: []
+  - m_Id: 10388913907761152
+    m_Localized: STAGE 4
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
