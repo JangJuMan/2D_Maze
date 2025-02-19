@@ -8,8 +8,8 @@ public class SceneHandler : MonoBehaviour
     void Awake(){
         Application.targetFrameRate = 120;
         //FOR DEBUG
-        PlayerPrefs.SetInt("currStage", 12);
-        PlayerPrefs.SetInt("userHintCnt", 12);
+        // PlayerPrefs.SetInt("currStage", 12);
+        // PlayerPrefs.SetInt("userHintCnt", 12);
     }
 
     void Update(){
@@ -68,6 +68,6 @@ public class SceneHandler : MonoBehaviour
             Debug.Log("Quit Application");
         #endif
         // FOR DEBUG
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
     }
 }
