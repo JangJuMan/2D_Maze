@@ -10,7 +10,7 @@ public class SceneHandler : MonoBehaviour
     void Awake(){
         Application.targetFrameRate = 120;
         //FOR DEBUG
-        PlayerPrefs.SetInt("currStage", 13);
+        PlayerPrefs.SetInt("currStage", 15);
         PlayerPrefs.SetInt("userHintCnt", 12);
     }
 
