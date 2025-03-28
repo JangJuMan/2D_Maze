@@ -15,7 +15,7 @@ public class AudioHandler : MonoBehaviour
     public int channels;
     private AudioSource[] sfxPlayers;
 
-    public enum Sfx {Pop, Pop2, Pop3, Clear, Out}
+    public enum Sfx {Pop, Pop2, Pop3, Clear, Out, Die}
     private int channelIndex;
 
     void Awake(){

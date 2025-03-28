@@ -1,15 +1,27 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    public static SceneHandler Instance;
     public UIManager uiManger;
 
     void Awake(){
         Application.targetFrameRate = 120;
         //FOR DEBUG
-        PlayerPrefs.SetInt("currStage", 12);
+        PlayerPrefs.SetInt("currStage", 13);
         PlayerPrefs.SetInt("userHintCnt", 12);
+    }
+
+    void Start()
+    {
+        if(Instance == null){
+            Instance = this;
+        }
+        else{
+            Destroy(this);
+        }
     }
 
     void Update(){

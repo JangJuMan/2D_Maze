@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
     IEnumerator SetTimer(){
         while(true){
             timeText.text = time.ToString("N1");
-            timerSlider.value = time / stageGrade[2];
+            timerSlider.value = time / stageGrade[(int)Grade.RankC];
 
             if(time > stageGrade[(int)Grade.RankC]){
                 timerStarImages[(int)Stars.Full0].gameObject.SetActive(false);
