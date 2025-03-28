@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Localization.SmartFormat.Utilities;
 using UnityEngine.SceneManagement;
 
 public class OutSideHandler : MonoBehaviour

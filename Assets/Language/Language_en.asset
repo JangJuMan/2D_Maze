@@ -171,10 +171,8 @@ MonoBehaviour:
     m_Localized: OK
     m_Metadata:
       m_Items: []
-  - m_Id: 38388276330496
-    m_Localized: 'You already use
-
-      All Hints'
+  - m_Id: 24538450431770624
+    m_Localized: Starball
     m_Metadata:
       m_Items: []
   - m_Id: 39184426532864
@@ -186,7 +184,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 43061494349824
-    m_Localized: "The Ad didn't load.\nTry again later or \nPlease check your\nNetwork
+    m_Localized: "The Ad didn't load.\r\nTry again later or \r\nPlease check your\r\nNetwork
       environment"
     m_Metadata:
       m_Items: []
@@ -259,6 +257,132 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 10389861598167040
     m_Localized: STAGE 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24537124780048384
+    m_Localized: 'You already use
+
+      All Hints'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24537124826185728
+    m_Localized: STAGE 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450431770625
+    m_Localized: Rugby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450431770626
+    m_Localized: Biliard 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450431770627
+    m_Localized: Soccer 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964928
+    m_Localized: Biliard 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964929
+    m_Localized: Jupiter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964930
+    m_Localized: Earth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964931
+    m_Localized: Moon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964932
+    m_Localized: Neptune
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964933
+    m_Localized: Uranus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964934
+    m_Localized: Venus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964935
+    m_Localized: Mars
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964936
+    m_Localized: Sun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964937
+    m_Localized: Sunny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24538450435964938
+    m_Localized: Ghost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705024
+    m_Localized: "Need \u2605 x 26"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705025
+    m_Localized: "Need \u2605 x 27"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705026
+    m_Localized: "Need \u2605 x 28"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705027
+    m_Localized: "Need \u2605 x 29"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705028
+    m_Localized: "Need \u2605 x 30"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705029
+    m_Localized: "Need \u2605 x 31"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705030
+    m_Localized: "Need \u2605 x 32"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705031
+    m_Localized: "Need \u2605 x 33"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705032
+    m_Localized: "Need \u2605 x 35"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705033
+    m_Localized: "Need \u2605 x 37"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705034
+    m_Localized: "Need \u2605 x 38"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705035
+    m_Localized: "Need \u2605 x 39"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705036
+    m_Localized: "Need \u2605 x 40"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705037
+    m_Localized: "Need \u2605 x 43"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24539451192705038
+    m_Localized: "Need \u2605 x 45"
     m_Metadata:
       m_Items: []
   references:

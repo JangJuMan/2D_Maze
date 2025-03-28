@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using GoogleMobileAds.Sample;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
