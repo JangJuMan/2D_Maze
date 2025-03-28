@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 using GoogleMobileAds.Api;
-using System.Threading.Tasks;
 
 // Google Mob Ads Rewarded Ad 샘플코드 참조
 // https://github.com/googleads/googleads-mobile-unity/blob/main/samples/HelloWorld/Assets/Scripts/RewardedAdController.cs

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainController : MonoBehaviour
@@ -7,7 +5,7 @@ public class MainController : MonoBehaviour
     public static MainController Instance;
 
     Vector2 scrollRectPos;
-    const int _maxStage = 4; // 총 스테이지 수
+    const int _maxStage = 5; // 총 스테이지 수
     const int _maxLevel = 3; // 스테이지 당 레벨 수
 
 

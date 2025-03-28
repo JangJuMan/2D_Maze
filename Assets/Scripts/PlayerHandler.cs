@@ -32,7 +32,13 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    // Stage 1 ~ 3
+    // Stage 1 ~ 3 (Trigger)
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.CompareTag("DoorController")){
+            AudioHandler.Instance.PlaySfx(AudioHandler.Sfx.DoorSlide);
+        }
+    }
+    
     private void OnTriggerStay2D(Collider2D other){
         if(other.gameObject.CompareTag("DoorController")){
             GameManager.Instance.isDoorOpening = true;
@@ -57,7 +63,7 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    // Stage 4 ~
+    // Stage 4 ~ (Collision)
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Finish")){

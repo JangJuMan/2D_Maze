@@ -3,13 +3,26 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    public static SceneHandler Instance;
     public UIManager uiManger;
 
     void Awake(){
         Application.targetFrameRate = 120;
         //FOR DEBUG
-        // PlayerPrefs.SetInt("currStage", 12);
-        // PlayerPrefs.SetInt("userHintCnt", 12);
+        #if UNITY_EDITOR
+            PlayerPrefs.SetInt("currStage", 15);
+            PlayerPrefs.SetInt("userHintCnt", 12);
+        #endif
+    }
+
+    void Start()
+    {
+        if(Instance == null){
+            Instance = this;
+        }
+        else{
+            Destroy(this);
+        }
     }
 
     void Update(){
@@ -60,14 +73,13 @@ public class SceneHandler : MonoBehaviour
     }
 
     public void ExitGame(){
-        #if UNITY_EDITOR
+        #if UNITY_EDITOR    // FOR DEBUG
             UnityEditor.EditorApplication.isPlaying = false;
             Debug.Log("Quit Application - Unity");
+            PlayerPrefs.DeleteAll();
         #else
             Application.Quit(); // 어플리케이션 종료
             Debug.Log("Quit Application");
         #endif
-        // FOR DEBUG
-        // PlayerPrefs.DeleteAll();
     }
 }
