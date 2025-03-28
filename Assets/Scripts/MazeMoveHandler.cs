@@ -33,8 +33,7 @@ public class MazeMoveHandler : MonoBehaviour
         int mazeMoveType = PlayerPrefs.GetInt("mazeMoveType");
         switch(mazeMoveType){
             case (int)MoveType.Drag:
-                #if UNITY_EDITOR
-                    // FOR DEBUG : PC판 디버그용
+                #if UNITY_EDITOR        // FOR DEBUG : PC판 디버그용
                     if(Input.GetMouseButton(0)){
                         transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") * mouse_speed, Space.World);
                         transform.Rotate(0f, 0f, Input.GetAxis("Mouse Y") * mouse_speed, Space.World);
