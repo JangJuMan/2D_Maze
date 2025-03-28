@@ -78,6 +78,16 @@
 > * Level 2 : 90 / 180 / 270
 > * Level 3 : 120 / 200 / 300<br/>
 
+> #### 스테이지 4 클리어 기준시간
+> * Level 1 : 30 / 60 / 90
+> * Level 2 : 15 / 30 / 45
+> * Level 3 : 70 / 140 / 210<br/>
+
+> #### 스테이지 5 클리어 기준시간
+> * Level 1 : 40 / 80 / 120
+> * Level 2 : 20 / 40 / 60
+> * Level 3 : 60 / 120 / 180<br/>
+
 > #### 설정정보
 > * mazeMoveType(int) : 0(드래그), 1(자이로센서), 2(버튼)
 > * userHintCnt(int) : 힌트개수
@@ -101,6 +111,22 @@
 > * 볼링공(20개)
 > * 골프공(23개)
 > * 귀엽찌(25개)
+> * 별공(26개)
+> * 럭비공(27개)
+> * 당구공1(28개)
+> * 축구공3(29개)
+> * 당구공2(30개)
+> * 목성(31개)
+> * 지구(32개)
+> * 초승달(33개)
+> * 금성(35개)
+> * 해왕성(37개)
+> * 천왕성(38개)
+> * 화성(39개)
+> * 태양(40개)
+> * 태양2(43개)
+> * 유령(45개)
+
 
 # 아이콘 출처
 > 비치볼(a href=httpswww.flaticon.comkrfree-icons title=장난감 아이콘장난감 아이콘 제작자 Freepik - Flaticona)<br/>
@@ -131,3 +157,28 @@
 > 뒤로가기(a href=httpswww.flaticon.comkrfree-icons title=뒤로 아이콘뒤로 아이콘 제작자 Md Tanvirul Haque - Flaticona)<br/>
 > 다시하기(a href=httpswww.flaticon.comkrfree-icons- title=재 장전 아이콘재 장전 아이콘 제작자 Roundicons - Flaticona)<br/>
 > 다시하기(a href=httpswww.flaticon.comkrfree-icons- title=다시 하다 아이콘다시 하다 아이콘 제작자 Moon.de - Flaticona)<br/>
+> 별무늬공(a href="https://www.flaticon.com/kr/free-icons/-" title="- 아이콘")- 아이콘 제작자: Vitaly Gorbachev - Flaticon<br/>
+> 럭비공 (a href="https://www.flaticon.com/kr/free-icons/-" title="- 아이콘")- 아이콘 제작자: Vitaly Gorbachev - Flaticon<br/>
+> 당구공8 (a href="https://www.flaticon.com/kr/free-icons/" title="당구 아이콘")당구 아이콘 제작자: Freepik - Flaticon<br/>
+> 축구공 리얼(a href="https://www.flaticon.com/kr/free-icons/-" title="- 아이콘")- 아이콘 제작자: Freepik - Flaticon<br/>
+> 당구공8 귀염 (a href="https://www.flaticon.com/kr/free-icons/" title="여덟 아이콘")여덟 아이콘 제작자: Those Icons - Flaticon<br/>
+> 유령 (a href="https://www.flaticon.com/kr/free-icons/" title=" 아이콘") 아이콘 제작자: Vitaly Gorbachev - Flaticon<br/>
+> 목성(a href="https://www.flaticon.com/kr/free-icons/" title="행성 아이콘")행성 아이콘 제작자: Victoruler - Flaticon<br/>
+> 천왕성 (a href="https://www.flaticon.com/kr/free-icons/" title="행성 아이콘")행성 아이콘 제작자: Freepik - Flaticon<br/>
+> 수성(a href="https://www.flaticon.com/kr/free-icons/" title="해왕성 아이콘")해왕성 아이콘 제작자: Freepik - Flaticon<br/>
+> 화성(a href="https://www.flaticon.com/kr/free-icons/" title="행성 아이콘")행성 아이콘 제작자: Freepik - Flaticon<br/>
+> 지구 (a href="https://www.flaticon.com/kr/free-icons/" title="행성 아이콘")행성 아이콘 제작자: Smashicons - Flaticon<br/>
+> 화성 2 (a href="https://www.flaticon.com/kr/free-icons/" title="화성 아이콘")화성 아이콘 제작자: Freepik - Flaticon<br/>
+> 초승달 (a href="https://www.flaticon.com/kr/free-icons/" title="달 아이콘")달 아이콘 제작자: Freepik - Flaticon<br/>
+> 태양 (a href="https://www.flaticon.com/kr/free-icons/" title="태양 아이콘")태양 아이콘 제작자: Freepik - Flaticon<br/>
+> 태양2 (a href="https://www.flaticon.com/kr/free-icons/" title=" 아이콘"> 아이콘 제작자: Freepik - Flaticon<br/>
+
+# 사운드 출처
+> stone-push-37412.mp3 / https://pixabay.com/ko/sound-effects/stone-push-37412/ <br/>
+> power-up-type-1-230548.mp3 / https://pixabay.com/ko/sound-effects/power-up-type-1-230548/<br/>
+> multi-pop-2-188167.mp3 / https://pixabay.com/ko/sound-effects/multi-pop-2-188167/<br/>
+> multi-pop-6-188170.mp3 / https://pixabay.com/ko/sound-effects/multi-pop-1-188165/<br/>
+> pop-268648.mp3 / https://pixabay.com/ko/sound-effects/pop-268648/<br/>
+> starlight-204347(nojisuma).mp3 / https://pixabay.com/music/beats-starlight-204347/<br/>
+
+
